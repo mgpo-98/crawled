@@ -1,10 +1,12 @@
 from django.db import models
 
 
-class BoardData(models.Model):
-    title = models.CharField(max_length=300)
-    link = models.URLField()
-    specific_id = models.CharField(max_length=15)
+class SearchList(models.Model):
+    post_title = models.CharField(max_length=200)
+    posting_date = models.CharField(max_length=100)
+    blog_url = models.CharField(max_length=500)
+    created_at = models.DateTimeField(auto_now_add=True)
+    updated_at = models.DateTimeField(auto_now=True)
 
-
-# Create your models here.
+    class Meta:
+        db_table = "search_lists"
